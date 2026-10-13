@@ -243,8 +243,6 @@ export default function MainScene() {
   const [heartButtonActive, setHeartButtonActive] = useState(false)
   const [showBonusMessage, setShowBonusMessage] = useState(false)
   const [burstActive, setBurstActive] = useState(false)
-  const [audioEnabled, setAudioEnabled] = useState(false)
-  const [audioLoaded, setAudioLoaded] = useState(false)
 
   // Stagger text appearance
   useEffect(() => {
@@ -343,30 +341,6 @@ export default function MainScene() {
 
       {/* Petals */}
       {petals.map(i => <FloatingPetal key={i} index={i} />)}
-
-      {/* Audio button */}
-      <motion.button
-        style={{
-          position: 'absolute', top: '16px', right: '16px',
-          background: 'rgba(215,38,94,0.15)',
-          border: '1px solid rgba(215,38,94,0.3)',
-          borderRadius: '50%',
-          width: '40px', height: '40px',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          cursor: 'pointer',
-          fontSize: '16px',
-          zIndex: 20,
-          backdropFilter: 'blur(8px)',
-        }}
-        onClick={() => setAudioEnabled(!audioEnabled)}
-        whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        title={audioEnabled ? 'Ovozni o\'chirish' : 'Ovozni yoqish'}
-      >
-        {audioEnabled ? '🔊' : '🔇'}
-      </motion.button>
 
       {/* Burst hearts */}
       <BurstHearts active={burstActive} />
@@ -488,7 +462,7 @@ export default function MainScene() {
                 letterSpacing: '0.02em',
               }}>
                 Yuragimdagi eng go'zal joy doim seniki.<br />
-                <span style={{ color: '#F5D58A' }}>Ikki oyimiz muborak, sevgilim! ❤️</span>
+                <span style={{ color: '#F5D58A' }}>Alloh oilamizni mustahkam qilsin, Xotin! ❤️</span>
               </p>
             </motion.div>
           )}

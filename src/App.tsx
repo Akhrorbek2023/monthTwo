@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import CinematicIntro from './components/CinematicIntro'
 import MainScene from './components/MainScene'
+import AudioPlayer from './components/AudioPlayer'
 
 export default function App() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -26,6 +27,7 @@ export default function App() {
         left: 0,
       }}
     >
+      <AudioPlayer />
       {!introComplete && (
         <CinematicIntro
           onComplete={() => setIntroComplete(true)}
